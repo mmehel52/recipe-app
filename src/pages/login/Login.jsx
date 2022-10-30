@@ -1,7 +1,7 @@
 import { useState } from "react";
-import PrivateRouter from "../../router/PrivateRouter";
+
 import { useNavigate } from "react-router-dom";
-import AppRouter from "../../router/Approuter";
+// import PrivateRouter from "../../router/PrivateRouter";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -73,7 +73,7 @@ const Login = () => {
           <button className="btn btn-danger mb-4">Submit</button>
         </div>
       </form>
-      <PrivateRouter {...formValues} />
+      {/* <PrivateRouter {...formValues} /> */}
     </div>
   );
 };

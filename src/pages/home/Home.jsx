@@ -3,19 +3,23 @@ import Button from "react-bootstrap/Button";
 import Nav from "../../components/navbar/Nav";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import Card from "./Card";
 
 const Home = () => {
   const [searchBar, setSearchBar] = useState(null);
   const [meal, setMeal] = useState(null);
   const [data, setData] = useState(null);
-  const api_key = "8a73009571cb02899f2e2400ce448e72";
-  const app_id = "91a8071c";
+  const api_key = "d616f2420a85019cd24d53f8f75e75d6	";
+  const app_id = "e79a83cc";
   const getApi = () => {
     axios
       .get(
         `https://api.edamam.com/search?q=${searchBar}&app_id=${app_id}&app_key=${api_key}&mealType=${meal}`
       )
-      .then((res) => {})
+      .then((res) => {
+        console.log(res.data.hits);
+        setData(res.data.hits);
+      })
       .catch((err) => console.log(err));
   };
   useEffect(() => {
@@ -49,6 +53,9 @@ const Home = () => {
         <Button variant="warning" onClick={() => getApi()}>
           Search
         </Button>
+      </div>
+      <div>
+        {data && data.map((item, idx) => <Card data={item} key={idx} />)}
       </div>
     </div>
   );

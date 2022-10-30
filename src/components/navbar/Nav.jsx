@@ -4,9 +4,7 @@ function Nav() {
   return (
     <nav className="navbar navbar-expand-md navbar-light">
       <div className="container-fluid">
-        <NavLink to="/recipe" className="navbar-brand">
-          Recipe
-        </NavLink>
+        Recipe
         <button
           className="navbar-toggler"
           type="button"
