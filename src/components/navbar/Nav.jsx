@@ -1,71 +1,30 @@
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
+import NavStyled, { NavbarLink, NavImg, NavbarLinka } from "./NavStyled.js";
+import { useNavigate } from "react-router-dom";
 
 function Nav() {
+  const navigate = useNavigate();
   return (
-    <nav className="navbar navbar-expand-md navbar-light">
-      <div className="container-fluid">
-        Recipe
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav ms-auto mb-2 me-3 mb-lg-0">
-            <li className="nav-item">
-              <NavLink
-                style={({ isActive }) => ({
-                  color: isActive && "red",
-                })}
-                to="/home"
-                className="nav-link active"
-                aria-current="page"
-              >
-                Home
-              </NavLink>
-            </li>
-
-            <li className="nav-item">
-              <NavLink
-                style={({ isActive }) => ({
-                  color: isActive && "red",
-                })}
-                to="/about"
-                className="nav-link"
-                aria-current="page"
-              >
-                About
-              </NavLink>
-            </li>
-
-            <li className="nav-item">
-              <a
-                href="https://github.com/mmehel52"
-                className="nav-link"
-                aria-current="page"
-              >
-                Github
-              </a>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                style={({ isActive }) => ({
-                  color: isActive && "red",
-                })}
-                to="/"
-                className="nav-link"
-                aria-current="page"
-              >
-                Logout
-              </NavLink>
-            </li>
-          </ul>
-        </div>
+    <NavStyled>
+      <div>
+        <NavImg
+          src="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg"
+          alt=""
+          onClick={() => navigate("/home")}
+        />
+        <NavbarLink to="/home">Recipe</NavbarLink>
       </div>
-    </nav>
+
+      <div>
+        <NavbarLink to="/about">About</NavbarLink>
+
+        <NavbarLinka href="https://github.com/mmehel52" target="_blank">
+          GitHub
+        </NavbarLinka>
+
+        <NavbarLink to="/">Logout</NavbarLink>
+      </div>
+    </NavStyled>
   );
 }
 

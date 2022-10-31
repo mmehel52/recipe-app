@@ -1,16 +1,17 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import CardStyled, { CardButton, CardImg } from "./CardStyled.js";
 const Card = ({ data }) => {
   const navigate = useNavigate();
   console.log(data.recipe);
   return (
-    <div>
-      <p>{data.recipe.label}</p>
-      <img src={data.recipe.image} alt="" />
-      <button onClick={() => navigate("/details", { state: data.recipe })}>
+    <CardStyled>
+      <h4>{data.recipe.label}</h4>
+      <CardImg src={data.recipe.image} alt="" />
+      <CardButton onClick={() => navigate("/details", { state: data.recipe })}>
         details
-      </button>
-    </div>
+      </CardButton>
+    </CardStyled>
   );
 };
 

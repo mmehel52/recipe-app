@@ -4,7 +4,13 @@ import Nav from "../../components/navbar/Nav";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import Card from "./Card";
-
+import HomeStyled, {
+  HomeDiv,
+  HomeButton,
+  HomeInput,
+  HomeSelect,
+  CardsDiv,
+} from "./HomeStyled.js";
 const Home = () => {
   const [searchBar, setSearchBar] = useState(null);
   const [meal, setMeal] = useState(null);
@@ -29,34 +35,32 @@ const Home = () => {
   return (
     <div>
       <Nav />
-      <div className="flex">
-        <input
-          type="text"
-          className="bg-black text-white p-2 rounded-lg m-3"
-          placeholder="search"
-          onChange={(e) => {
-            setSearchBar(e.target.value);
-          }}
-        />
-        <select
-          className="rounded-lg bg-black text-white p-1 m-3"
-          onChange={(e) => {
-            setMeal(e.target.value);
-          }}
-        >
-          <option value="breakfast">breakfast</option>
-          <option value="brunch">brunch</option>
-          <option value="lunch">lunch/dinner</option>
-          <option value="snack">Snack</option>
-          <option value="teatime">TeaTime</option>
-        </select>
-        <Button variant="warning" onClick={() => getApi()}>
-          Search
-        </Button>
-      </div>
-      <div>
-        {data && data.map((item, idx) => <Card data={item} key={idx} />)}
-      </div>
+      <HomeStyled>
+        <HomeDiv>
+          <HomeInput
+            type="text"
+            placeholder="search"
+            onChange={(e) => {
+              setSearchBar(e.target.value);
+            }}
+          />
+          <HomeSelect
+            onChange={(e) => {
+              setMeal(e.target.value);
+            }}
+          >
+            <option value="breakfast">breakfast</option>
+            <option value="brunch">brunch</option>
+            <option value="lunch">lunch/dinner</option>
+            <option value="snack">Snack</option>
+            <option value="teatime">TeaTime</option>
+          </HomeSelect>
+          <HomeButton onClick={() => getApi()}>Search</HomeButton>
+        </HomeDiv>
+        <CardsDiv>
+          {data && data.map((item, idx) => <Card data={item} key={idx} />)}
+        </CardsDiv>
+      </HomeStyled>
     </div>
   );
 };

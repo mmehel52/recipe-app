@@ -2,7 +2,13 @@ import { useState } from "react";
 
 import { useNavigate } from "react-router-dom";
 // import PrivateRouter from "../../router/PrivateRouter";
-
+import LoginStyled, {
+  LoginDiv,
+  LoginImg,
+  Form,
+  LoginInput,
+  LoginButton,
+} from "./LoginStyled.js";
 const Login = () => {
   const navigate = useNavigate();
   const [formValues, setFormValues] = useState({
@@ -23,58 +29,37 @@ const Login = () => {
   };
 
   return (
-    <div className="container">
-      <h1 className="text-center mt-4">LOGİN</h1>
-      <form onSubmit={() => navigate("home")}>
-        <div className="mb-3">
-          <label htmlFor="username" className="form-label">
-            Username
-          </label>
-          <input
+    <LoginStyled>
+      <LoginDiv>
+        <LoginImg
+          src="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg"
+          alt=""
+        />
+        <h1 style={{ color: "#D6D58E" }}>RECİPE</h1>
+        <Form onSubmit={() => navigate("home")}>
+          <LoginInput
             name="username"
             type="text"
-            className="form-control"
             id="username"
-            placeholder="Enter your username"
+            placeholder="USERNAME"
             value={formValues.username}
             onChange={handleFormValues}
           />
-        </div>
-        <div className="mb-3">
-          <label htmlFor="email" className="form-label">
-            Email
-          </label>
-          <input
-            name="email"
-            type="email"
-            className="form-control"
-            id="email"
-            placeholder="Enter your email"
-            value={formValues.email}
-            onChange={handleFormValues}
-          />
-        </div>
 
-        <div className="mb-3">
-          <label htmlFor="password" className="form-label">
-            Password
-          </label>
-          <input
+          <LoginInput
             name="password"
             type="password"
-            className="form-control"
             id="password"
-            placeholder="Enter your password"
+            placeholder="PASSWORD"
             value={formValues.password}
             onChange={handleFormValues}
           />
-        </div>
-        <div className="text-center">
-          <button className="btn btn-danger mb-4">Submit</button>
-        </div>
-      </form>
+
+          <LoginButton>LOGİN</LoginButton>
+        </Form>
+      </LoginDiv>
       {/* <PrivateRouter {...formValues} /> */}
-    </div>
+    </LoginStyled>
   );
 };
 
