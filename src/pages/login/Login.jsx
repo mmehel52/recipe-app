@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 import { useNavigate } from "react-router-dom";
-import About from "../about/About.jsx";
 
 import LoginStyled, {
   LoginDiv,
@@ -12,17 +11,6 @@ import LoginStyled, {
 } from "./LoginStyled.js";
 const Login = () => {
   const navigate = useNavigate();
-
-  const userInfo = {
-    username: "admin",
-    password: "123",
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    sessionStorage.setItem("user", JSON.stringify(userInfo));
-    navigate(-1);
-  };
 
   return (
     <LoginStyled>
@@ -40,8 +28,6 @@ const Login = () => {
           <LoginButton type="submit">LOGİN</LoginButton>
         </Form>
       </LoginDiv>
-
-      {/* <PrivateRouter {...formValues} /> */}
     </LoginStyled>
   );
 };
