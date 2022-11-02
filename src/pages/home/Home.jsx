@@ -30,8 +30,6 @@ const Home = () => {
           setData(res.data.hits);
         })
         .catch((err) => console.log(err));
-    } else {
-      alert("Fill the Form");
     }
   };
   useEffect(() => {
