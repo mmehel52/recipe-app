@@ -27,7 +27,6 @@ export const NavbarLink = styled(Link)`
 
 export const NavImg = styled.img`
   width: 8rem;
-  border-radius: 50%;
   padding: 1rem;
 `;
 export const HamburgerMenu = styled.div`

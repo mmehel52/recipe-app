@@ -20,7 +20,7 @@ const Details = () => {
         <TopDiv>
           <h1>{detail.label}</h1>
           <TopImg
-            src="https://www.tarifinisevdim.com/uploads/others/eb7c8b8e-d929-4b66-8b0a-2548ea7d150d.Jpeg"
+            src="http://cdn.onlinewebfonts.com/svg/img_546517.png"
             alt=""
           />
         </TopDiv>

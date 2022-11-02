@@ -28,10 +28,10 @@ const Login = () => {
     <LoginStyled>
       <LoginDiv>
         <LoginImg
-          src="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Recipe-575434.svg/2397px-Recipe-575434.svg.png"
           alt=""
         />
-        <h1 style={{ color: "#D6D58E" }}>RECİPE</h1>
+        <h1 style={{ color: "#D6D58E" }}>RECİPE APP</h1>
         <Form onSubmit={() => navigate("/home")}>
           <LoginInput type="text" placeholder="USERNAME" required />
 

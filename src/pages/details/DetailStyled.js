@@ -46,7 +46,7 @@ export const DetailImg = styled.img`
 `;
 export const TopImg = styled.img`
   width: 10rem;
-  border-radius: 50%;
+
   padding: 0.5rem;
 `;
 export const DetailLi = styled.li`

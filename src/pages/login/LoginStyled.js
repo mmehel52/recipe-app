@@ -34,7 +34,7 @@ export const LoginDiv = styled.div`
 
 export const LoginImg = styled.img`
   width: 15rem;
-  border-radius: 50%;
+
   padding: 1rem;
 `;
 export const Form = styled.form`

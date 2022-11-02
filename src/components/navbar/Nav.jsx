@@ -17,11 +17,11 @@ function Nav() {
     <NavStyled>
       <div>
         <NavImg
-          src="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Recipe-575434.svg/2397px-Recipe-575434.svg.png"
           alt=""
           onClick={() => navigate("/home")}
         />
-        <NavbarLink to="/home">Recipe</NavbarLink>
+        <NavbarLink to="/home">Recipe App</NavbarLink>
       </div>
       <HamburgerMenu onClick={() => setIsOpen(!isOpen)}>
         <GiHamburgerMenu style={{ fontSize: "45px" }} />
