@@ -6,21 +6,25 @@ const DetailStyled = styled.div`
   text-align: center;
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+
   @media (max-width: ${({ theme }) => theme.responsive}) {
   }
 `;
 export const DetailDiv = styled.div`
   border: 2px solid ${({ theme }) => theme.colors.text};
   color: ${({ theme }) => theme.colors.text};
+  background-color: ${({ theme }) => theme.colors.header};
   border-radius: 20px;
-  padding: 13px;
+  padding: 1rem;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 5rem;
+  gap: 1rem;
 `;
 export const TopDiv = styled.div`
   color: ${({ theme }) => theme.colors.text};
@@ -28,6 +32,7 @@ export const TopDiv = styled.div`
   padding: 15px;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   gap: 5rem;
@@ -48,11 +53,11 @@ export const DetailLi = styled.li`
   list-style-type: none;
   text-align: end;
   font-size: 1.5rem;
-  margin: 0 1rem;
+  margin: 0 0rem;
 `;
 export const DetailLi2 = styled.li`
   text-align: start;
-  font-size: 1.5rem;
-  margin: 0 1rem;
+  font-size: 1rem;
+  margin: 0 0rem;
 `;
 export default DetailStyled;

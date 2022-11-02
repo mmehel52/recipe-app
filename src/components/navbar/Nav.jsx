@@ -24,14 +24,11 @@ function Nav() {
         <NavbarLink to="/home">Recipe</NavbarLink>
       </div>
       <HamburgerMenu onClick={() => setIsOpen(!isOpen)}>
-        <GiHamburgerMenu />
+        <GiHamburgerMenu style={{ fontSize: "45px" }} />
       </HamburgerMenu>
       <MenuDiv isOpen={isOpen} onClick={() => setIsOpen(false)}>
         <NavbarLink to="/about">About</NavbarLink>
-
-        <NavbarLinka href="https://github.com/mmehel52" target="_blank">
-          GitHub
-        </NavbarLinka>
+        <NavbarLink to="/register">Register</NavbarLink>
 
         <NavbarLink to="/">Logout</NavbarLink>
       </MenuDiv>

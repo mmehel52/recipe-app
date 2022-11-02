@@ -13,7 +13,7 @@ export const Aboutdiv = styled.div`
   border: 2px solid ${({ theme }) => theme.colors.body.header};
   border-radius: 20px;
   width: 50%;
-
+  background-color: ${({ theme }) => theme.colors.header};
   padding: 20px;
 `;
 export const AboutLi = styled.li`

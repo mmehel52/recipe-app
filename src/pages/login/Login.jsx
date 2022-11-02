@@ -1,7 +1,8 @@
 import { useState } from "react";
 
 import { useNavigate } from "react-router-dom";
-// import PrivateRouter from "../../router/PrivateRouter";
+import About from "../about/About.jsx";
+
 import LoginStyled, {
   LoginDiv,
   LoginImg,
@@ -11,21 +12,16 @@ import LoginStyled, {
 } from "./LoginStyled.js";
 const Login = () => {
   const navigate = useNavigate();
-  const [formValues, setFormValues] = useState({
-    username: "",
-    email: "",
-    password: "",
-  });
+
+  const userInfo = {
+    username: "admin",
+    password: "123",
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const { username, password, email } = formValues;
-    alert(`Username: ${username}
-    Email: ${email}
-    password:${password}`);
-  };
-  const handleFormValues = (e) => {
-    setFormValues({ ...formValues, [e.target.name]: e.target.value });
+    sessionStorage.setItem("user", JSON.stringify(userInfo));
+    navigate(-1);
   };
 
   return (
@@ -36,28 +32,15 @@ const Login = () => {
           alt=""
         />
         <h1 style={{ color: "#D6D58E" }}>RECİPE</h1>
-        <Form onSubmit={() => navigate("home")}>
-          <LoginInput
-            name="username"
-            type="text"
-            id="username"
-            placeholder="USERNAME"
-            value={formValues.username}
-            onChange={handleFormValues}
-          />
+        <Form onSubmit={() => navigate("/home")}>
+          <LoginInput type="text" placeholder="USERNAME" required />
 
-          <LoginInput
-            name="password"
-            type="password"
-            id="password"
-            placeholder="PASSWORD"
-            value={formValues.password}
-            onChange={handleFormValues}
-          />
+          <LoginInput type="password" placeholder="PASSWORD" required />
 
-          <LoginButton>LOGİN</LoginButton>
+          <LoginButton type="submit">LOGİN</LoginButton>
         </Form>
       </LoginDiv>
+
       {/* <PrivateRouter {...formValues} /> */}
     </LoginStyled>
   );

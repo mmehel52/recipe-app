@@ -16,10 +16,7 @@ const About = () => {
           <AboutLi>
             I'm currently learning Full-Stack Development Languages.
           </AboutLi>
-          <AboutLi>
-            I've already known JS,ReactJS,ReactNative,NodeJS,SQL,Phyton,AWS
-            Services
-          </AboutLi>
+          <AboutLi>I've already known JS,ReactJS,ReactNative,NodeJS</AboutLi>
           <AboutLi>I also enjoy digging into challenge code.</AboutLi>
           <AboutLi>Send email mehelx5207@gmail.com</AboutLi>
         </Aboutdiv>

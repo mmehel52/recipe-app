@@ -24,21 +24,7 @@ export const NavbarLink = styled(Link)`
     text-align: center;
   }
 `;
-export const NavbarLinka = styled.a`
-  text-decoration: none;
-  color: ${({ theme }) => theme.colors.text};
-  font-size: 1.5rem;
-  margin: 0 1rem;
-  &:hover {
-    color: ${({ theme }) => theme.colors.body};
-    font-weight: bold;
-  }
-  @media (max-width: ${({ theme }) => theme.responsive}) {
-    width: 100%;
 
-    text-align: center;
-  }
-`;
 export const NavImg = styled.img`
   width: 8rem;
   border-radius: 50%;

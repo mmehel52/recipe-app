@@ -10,23 +10,29 @@ import HomeStyled, {
   HomeInput,
   HomeSelect,
   CardsDiv,
+  HomeImg,
 } from "./HomeStyled.js";
+import homesvg from "./home.svg";
 const Home = () => {
   const [searchBar, setSearchBar] = useState(null);
   const [meal, setMeal] = useState(null);
   const [data, setData] = useState(null);
-  const api_key = "d616f2420a85019cd24d53f8f75e75d6	";
-  const app_id = "e79a83cc";
+  console.log(process.env);
+  const APP_ID = "e79a83cc";
+  const APP_KEY = "d616f2420a85019cd24d53f8f75e75d6";
+  const url = `https://api.edamam.com/search?q=${searchBar}&app_id=${APP_ID}&app_key=${APP_KEY}&mealType=${meal}`;
   const getApi = () => {
-    axios
-      .get(
-        `https://api.edamam.com/search?q=${searchBar}&app_id=${app_id}&app_key=${api_key}&mealType=${meal}`
-      )
-      .then((res) => {
-        console.log(res.data.hits);
-        setData(res.data.hits);
-      })
-      .catch((err) => console.log(err));
+    if (meal) {
+      axios
+        .get(url)
+        .then((res) => {
+          console.log(res.data.hits);
+          setData(res.data.hits);
+        })
+        .catch((err) => console.log(err));
+    } else {
+      alert("Fill the Form");
+    }
   };
   useEffect(() => {
     getApi();
@@ -58,7 +64,12 @@ const Home = () => {
           <HomeButton onClick={() => getApi()}>Search</HomeButton>
         </HomeDiv>
         <CardsDiv>
-          {data && data.map((item, idx) => <Card data={item} key={idx} />)}
+          {!data && <HomeImg src={homesvg} />}
+          {data?.length === 0 && (
+            <h2 style={{ color: "#D6D58E" }}>The Meal can not be found</h2>
+          )}
+          {data?.length > 0 &&
+            data.map((item, idx) => <Card data={item} key={idx} />)}
         </CardsDiv>
       </HomeStyled>
     </div>
