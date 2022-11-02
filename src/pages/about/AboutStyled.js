@@ -5,7 +5,7 @@ const AboutStyled = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 87vh;
+  min-height: 87vh;
   background-color: ${({ theme }) => theme.colors.body};
   color: ${({ theme }) => theme.colors.text};
 `;
@@ -14,13 +14,17 @@ export const Aboutdiv = styled.div`
   border-radius: 20px;
   width: 50%;
   background-color: ${({ theme }) => theme.colors.header};
-  padding: 20px;
+  padding: 10px;
+  overflow: hidden;
 `;
 export const AboutLi = styled.li`
   list-style-type: none;
   text-align: end;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   margin: 0 1rem;
+  @media (max-width: ${({ theme }) => theme.responsive}) {
+    font-size: 0.9rem;
+  }
 `;
 export const AboutImg = styled.img`
   width: 200px;

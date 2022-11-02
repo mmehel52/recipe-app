@@ -17,8 +17,6 @@ export const HomeDiv = styled.div`
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  @media (max-width: ${({ theme }) => theme.responsive}) {
-  }
 `;
 export const CardsDiv = styled.div`
   margin: 20px;
@@ -56,9 +54,11 @@ export const HomeSelect = styled.select`
 `;
 export const HomeImg = styled.img`
   width: 40rem;
-
   border-radius: 10%;
   padding: 1rem;
   color: ${({ theme }) => theme.colors.body};
+  @media (max-width: ${({ theme }) => theme.responsive}) {
+    width: 20rem;
+  }
 `;
 export default HomeStyled;

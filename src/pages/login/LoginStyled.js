@@ -26,6 +26,10 @@ export const LoginDiv = styled.div`
   align-items: center;
   gap: 2px;
   background-color: rgba(0, 0, 0, 0.4);
+  @media (max-width: ${({ theme }) => theme.responsive}) {
+    width: 30rem;
+    height: 30rem;
+  }
 `;
 
 export const LoginImg = styled.img`
