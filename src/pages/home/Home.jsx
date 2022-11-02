@@ -22,7 +22,7 @@ const Home = () => {
   const APP_KEY = "d616f2420a85019cd24d53f8f75e75d6";
   const url = `https://api.edamam.com/search?q=${searchBar}&app_id=${APP_ID}&app_key=${APP_KEY}&mealType=${meal}`;
   const getApi = () => {
-    if (meal) {
+    if (searchBar) {
       axios
         .get(url)
         .then((res) => {
