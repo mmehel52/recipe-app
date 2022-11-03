@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 
 import LoginStyled, {
@@ -19,13 +19,12 @@ const Login = () => {
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Recipe-575434.svg/2397px-Recipe-575434.svg.png"
           alt=""
         />
-        <h1 style={{ color: "#D6D58E" }}>RECİPE APP</h1>
+        <h1 style={{ color: "#D6D58E" }}>WELCOME TO </h1>
+
+        <h3 style={{ color: "#D6D58E" }}> RECİPE APP</h3>
+
         <Form onSubmit={() => navigate("/home")}>
-          <LoginInput type="text" placeholder="USERNAME" required />
-
-          <LoginInput type="password" placeholder="PASSWORD" required />
-
-          <LoginButton type="submit">LOGİN</LoginButton>
+          <LoginButton type="submit">CLİCK</LoginButton>
         </Form>
       </LoginDiv>
     </LoginStyled>

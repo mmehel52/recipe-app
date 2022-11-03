@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const LoginStyled = styled.div`
+const RegisterStyled = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -54,12 +54,11 @@ export const LoginInput = styled.input`
 `;
 export const LoginButton = styled.button`
   width: 15rem;
-
-  border: 2px solid ${({ theme }) => theme.colors.header};
-  border-radius: 10px;
-  background-color: #9fc131;
-  color: ${({ theme }) => theme.colors.header};
-  font-size: 30px;
+  border: none;
+  border-radius: 15px;
+  background-color: ${({ theme }) => theme.colors.header};
+  color: ${({ theme }) => theme.colors.text};
+  height: 2rem;
 `;
 
-export default LoginStyled;
+export default RegisterStyled;

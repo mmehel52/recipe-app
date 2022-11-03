@@ -1,16 +1,17 @@
-import { Link } from "react-router-dom";
 import NavStyled, {
   NavbarLink,
   NavImg,
-  NavbarLinka,
   HamburgerMenu,
   MenuDiv,
 } from "./NavStyled.js";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { LoginContext } from "../../context/LoginContext.jsx";
+import { useContext } from "react";
 
 function Nav() {
+  const { user, setUser } = useContext(LoginContext);
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
   return (
@@ -30,7 +31,16 @@ function Nav() {
         <NavbarLink to="/about">About</NavbarLink>
         <NavbarLink to="/register">Register</NavbarLink>
 
-        <NavbarLink to="/">Logout</NavbarLink>
+        {!user.name ? (
+          <NavbarLink to="/register">Login</NavbarLink>
+        ) : (
+          <NavbarLink
+            to="/"
+            onClick={() => setUser({ name: "", password: "" })}
+          >
+            Logout
+          </NavbarLink>
+        )}
       </MenuDiv>
     </NavStyled>
   );
